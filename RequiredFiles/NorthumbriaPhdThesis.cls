@@ -1,28 +1,27 @@
 %%%%%
 %% This is file `NorthumbriaPhdThesis.cls',
 %%
-%% This file is a LaTeX document class file for creating 
+%% This file is a LaTeX document class file for creating
 %% PhD theses according to Northumbria University's style guide
 %% which is outline at: https://bit.ly/2DSAnfB
-%% 
-%% Author: Graham Coulby
-%% Author Url: http://grahamcoulby.uk/
-%% Version: 0.4.1
-%%%%% 
+%%
+%% Author: Yan Zong
+%% Web: zongyan.info
+%%%%%
 
 %%
 % Define Class
 %%
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{NorthumbriaPhdThesis}
-              [2019/02/05 v0.4.1 Northumbria University Thesis Document Class. Created by Graham Coulby http://grahamcoulby.uk/]
+              [2020/10/19 Northumbria University Thesis Document Class. Modified by Yan Zong (zongyan.info)]
 
 %%
 % Support spacing required by the university
 %%
 \newif\if@onehalfspacing
 \DeclareOption{onehalfspacing}{\@onehalfspacingtrue}
-\DeclareOption{doublespacing}{\@onehalfspacingfalse} 
+\DeclareOption{doublespacing}{\@onehalfspacingfalse}
 \ExecuteOptions{doublespacing}
 
 \newif\if@uncited
@@ -48,7 +47,7 @@
 \RequirePackage{atbegshi}
 \RequirePackage{graphicx}
 \RequirePackage{natbib}
-\RequirePackage[titletoc]{appendix} 
+\RequirePackage[titletoc]{appendix}
 \RequirePackage[UKenglish]{datetime}
 \RequirePackage{lipsum}
 \RequirePackage{emptypage}
@@ -62,8 +61,13 @@
 \RequirePackage[acronym]{glossaries-extra}
 
 % modified the font family
-\RequirePackage{fontspec} 
-\setmainfont[BoldFont={Arial Bold}, ItalicFont={Arial Italic}]{Arial}
+% if you want to use the times new roman font, please use the following line
+\RequirePackage{times}
+% if you want to use the arial font, please use the following lines
+% Note, this only works in the XeLaTex engine.
+% \RequirePackage{fontspec}
+% \setmainfont[BoldFont={Arial Bold}, ItalicFont={Arial Italic}]{Arial}
+
 \renewcommand{\chaptermark}[1]{\markright{\chaptername\ \thechapter. #1}}
 
 % modifed the header
@@ -142,11 +146,11 @@
     \@beginparpenalty\@lowpenalty
     \begin{center}%
     % \bfseries #1
-    \addcontentsline{toc}{chapter}{#1} 
+    \addcontentsline{toc}{chapter}{#1}
     \section*{#1
         \@mkboth{%
           \MakeUppercase#1}{\MakeUppercase#1}}%
-    
+
     \@endparpenalty\@M
     \end{center}}{\par\vfil\null\pagestyle{fancy}}
 

@@ -88,9 +88,25 @@ This uses the multibib package which is required and defined in NorthumbriaPhdTh
 
 ### Font12
 
-The default font size if 11pt. If you would like to use a larger font use the flag `fontlg` when declaring the document class like so:
+The default font size is 11pt. If you would like to use a larger font use the flag `fontlg` when declaring the document class like so:
 
 ```latex
 \documentclass[twoside, openright, fontlg]{RequiredFiles/NorthumbriaPhdThesis}
+```
+
+### Time New Roman or Arial
+
+The default font is the times new roman. In the document class, please use the following code:
+
+```latex
+\RequirePackage{times}
+```
+
+If you want to use the arial font, please use the following code in the class document. In addition, these only 
+work in the XeLaTex engine.
+
+```latex
+\RequirePackage{fontspec}
+\setmainfont[BoldFont={Arial Bold}, ItalicFont={Arial Italic}]{Arial}
 ```
 
